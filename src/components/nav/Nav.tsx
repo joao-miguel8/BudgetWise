@@ -13,7 +13,7 @@ function Nav() {
 	];
 
 	return (
-		<div className="h-screen w-full min-[450px]:w-[240px]  fixed top-0 bg-[rgb(249,249,249)] ">
+		<div className="h-screen w-full min-[450px]:w-[240px] z-[60] fixed top-0 bg-[rgb(249,249,249)] ">
 			<nav className="mt-10">
 				<ul className="flex flex-col gap-4">
 					{navItems.map((item: NavItemType) => {
