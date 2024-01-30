@@ -1,10 +1,10 @@
+import classNames from "classnames";
 import { GrTransaction } from "react-icons/gr";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { PiTarget } from "react-icons/pi";
 import { IoCardOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import type { NavItemType } from "./types/NavItemType";
-import classNames from "classnames";
 
 function Nav({ handleCloseNavMenu, isNavMenuOpen }: { handleCloseNavMenu: () => void; isNavMenuOpen: boolean }) {
 	const navItems: NavItemType[] = [

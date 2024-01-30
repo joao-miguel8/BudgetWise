@@ -1,6 +1,5 @@
-import Nav from "@/components/nav/Nav";
-import Header from "./components/header/Header";
 import { useState } from "react";
+import Dashboard from "./layouts/desktop/dashboard/Dashboard";
 
 function App() {
 	const [isNavMenuOpen, setIsNavMenuOpen] = useState(false);
@@ -15,8 +14,7 @@ function App() {
 
 	return (
 		<>
-			<Header handleOpenNavMenu={handleOpenNavMenu} />
-			<Nav isNavMenuOpen={isNavMenuOpen} handleCloseNavMenu={handleCloseNavMenu} />
+			<Dashboard />
 		</>
 	);
 }
