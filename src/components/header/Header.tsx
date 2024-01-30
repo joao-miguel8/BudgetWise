@@ -1,11 +1,11 @@
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 
-function Header() {
+function Header({ handleOpenNavMenu }: { handleOpenNavMenu: () => void }) {
 	return (
 		<header className="border-b-[0.5px] w-full fixed z-50 bg-white">
 			<div className="py-2 px-4 flex justify-between">
-				<button>
+				<button onClick={() => handleOpenNavMenu()}>
 					<HiMenuAlt1 size={"1.6rem"} />
 				</button>
 				<button className="relative">

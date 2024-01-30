@@ -4,8 +4,9 @@ import { PiTarget } from "react-icons/pi";
 import { IoCardOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
 import type { NavItemType } from "./types/NavItemType";
+import classNames from "classnames";
 
-function Nav() {
+function Nav({ handleCloseNavMenu, isNavMenuOpen }: { handleCloseNavMenu: () => void; isNavMenuOpen: boolean }) {
 	const navItems: NavItemType[] = [
 		{ icon: <MdOutlineSpaceDashboard />, name: "Overview" },
 		{ icon: <GrTransaction />, name: "Transaction" },
@@ -14,9 +15,9 @@ function Nav() {
 	];
 
 	return (
-		<div className="h-screen w-full min-[450px]:w-[240px] z-[60] fixed top-0 bg-[rgb(249,249,249)]">
+		<div className={classNames("h-screen w-full min-[450px]:w-[240px] z-[60] fixed top-0 bg-[rgb(249,249,249)]", isNavMenuOpen ? "translate-x-0" : "-translate-x-full", "duration-300")}>
 			<nav className="mt-16">
-				<button className="absolute top-2 left-4">
+				<button onClick={() => handleCloseNavMenu()} className="absolute top-2 left-4">
 					<IoMdClose size={"1.6rem"} />
 				</button>
 				<ul className="flex flex-col gap-4">
