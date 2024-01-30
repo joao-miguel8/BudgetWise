@@ -1,4 +1,3 @@
-import useMediaQuery from "@/hook/useMediaQuery";
 import DashboardHeader from "./DashboardHeader";
 import DashboardNav from "./DashboardNav";
 
