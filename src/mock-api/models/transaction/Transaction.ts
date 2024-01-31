@@ -2,7 +2,7 @@ export interface Transaction {
 	id: number;
 	logo: string;
 	companyName: string;
-	transactionDate: string;
+	transactionDate: Date;
 	description?: string;
 	category: string;
 	transactionAmount: string;

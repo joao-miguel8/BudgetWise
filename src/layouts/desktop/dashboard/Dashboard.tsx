@@ -1,6 +1,7 @@
+import { useState } from "react";
 import DashboardHeader from "./DashboardHeader";
 import DashboardNav from "./DashboardNav";
-import TransactionCard from "@/components/transaction-card/TransactionCard";
+import TransactionsFeed from "@/components/transactions-feed/TransactionsFeed";
 
 function Dashboard() {
 	return (
@@ -17,11 +18,7 @@ function Dashboard() {
 						<div className="w-9/12">
 							<h3 className="text-20">Transactions</h3>
 							{/* Transaction feed list  */}
-							<div>
-								<span className="my-4 inline-block text-[#515151]">25 March, 2023</span>
-								{/* Transaction card  */}
-								<TransactionCard id={0} logo={"img"} companyName={"Zara"} transactionDate={"25 March, 2023 at 7:15PM"} category={"Fashion"} transactionAmount={"+350,000"} />
-							</div>
+							<TransactionsFeed />
 						</div>
 						{/* container 02 */}
 						<div className="w-1/2 bg-purple-300">2</div>

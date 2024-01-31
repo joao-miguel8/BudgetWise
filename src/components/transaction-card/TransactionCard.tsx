@@ -1,6 +1,8 @@
 import type { TransactionCardType } from "./types/TransactionCardType";
 
-function TransactionCard({ logo, companyName, transactionDate, category, transactionAmount }: TransactionCardType) {
+function TransactionCard({ transactionDetails }: { transactionDetails: TransactionCardType }) {
+	const { logo, companyName, category, transactionDate, transactionAmount } = transactionDetails;
+
 	return (
 		<div className="py-2 px-4 flex justify-between items-center bg-white">
 			{/* Logo img | Comp name | Transaction date */}
@@ -8,7 +10,7 @@ function TransactionCard({ logo, companyName, transactionDate, category, transac
 				<img src={logo} alt={logo} className="w-8 h-8 rounded-full bg-green-200" />
 				<div className="ml-4">
 					<h5 className="text-16 font-medium text-[#121219]">{companyName}</h5>
-					<span className="text-12 text-[#7777]">{transactionDate}</span>
+					<span className="text-12 text-[#7777]">{transactionDate.toDateString()}</span>
 				</div>
 			</div>
 			{/* Filter tag | Balance amount */}

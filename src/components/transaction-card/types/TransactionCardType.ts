@@ -5,7 +5,7 @@ export interface TransactionCardType extends Transaction {
 	logo: string;
 	companyName: string;
 	description?: string;
-	transactionDate: string;
+	transactionDate: Date;
 	category: string;
 	transactionAmount: string;
 }
