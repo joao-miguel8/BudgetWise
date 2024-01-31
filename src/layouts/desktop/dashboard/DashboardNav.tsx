@@ -3,7 +3,7 @@ import { GrTransaction } from "react-icons/gr";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { PiTarget } from "react-icons/pi";
 import { IoCardOutline } from "react-icons/io5";
-import { NavItemType } from "@/components/nav/types/NavItemType";
+import type { NavItemType } from "@/components/nav/types/NavItemType";
 
 function DashboardNav() {
 	const navItems: NavItemType[] = [

@@ -15,7 +15,8 @@ function App() {
 		setIsNavMenuOpen(true);
 	};
 
-	const isDesktop = useMediaQuery("(min-width: 768px)");
+	const isDesktop = useMediaQuery("(min-width: 908px)");
+
 	return (
 		<>
 			{!isDesktop ? (
