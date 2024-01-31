@@ -3,8 +3,9 @@ import { registerTransactionRoutes } from "./routes";
 
 // Define and configure our models and create mock-api server
 
-export function makeServer() {
+export function makeServer({ environment = "test" }) {
 	const server = createServer({
+		environment,
 		models: {
 			transaction: Model.extend({
 				transactionList: belongsTo(),
