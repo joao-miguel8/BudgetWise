@@ -20,7 +20,7 @@ function Dashboard() {
 							<div>
 								<span className="my-4 inline-block text-[#515151]">25 March, 2023</span>
 								{/* Transaction card  */}
-								<TransactionCard logo={"img"} companyName={"Zara"} transactionDate={"25 March, 2023 at 7:15PM"} category={"Fashion"} transactionAmount={"+350,000"} />
+								<TransactionCard id={0} logo={"img"} companyName={"Zara"} transactionDate={"25 March, 2023 at 7:15PM"} category={"Fashion"} transactionAmount={"+350,000"} />
 							</div>
 						</div>
 						{/* container 02 */}

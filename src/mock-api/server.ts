@@ -1,9 +1,10 @@
 import { belongsTo, createServer, hasMany, Model } from "miragejs";
+import { registerTransactionRoutes } from "./routes";
 
 // Define and configure our models and create mock-api server
 
 export function makeServer() {
-	const sever = createServer({
+	const server = createServer({
 		models: {
 			transaction: Model.extend({
 				transactionList: belongsTo(),
@@ -12,6 +13,10 @@ export function makeServer() {
 				transaction: hasMany(),
 			}),
 		},
+		routes() {
+			this.urlPrefix = "/mock-api";
+			registerTransactionRoutes(this);
+		},
 	});
-	return sever;
+	return server;
 }
