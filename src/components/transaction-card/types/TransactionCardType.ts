@@ -1,6 +1,4 @@
-import { Transaction } from "../../../mock-api/models/transaction/Transaction";
-
-export interface TransactionCardType extends Transaction {
+export type TransactionCardType = {
 	id: number;
 	logo: string;
 	companyName: string;
@@ -8,4 +6,4 @@ export interface TransactionCardType extends Transaction {
 	transactionDate: Date;
 	category: string;
 	transactionAmount: string;
-}
+};

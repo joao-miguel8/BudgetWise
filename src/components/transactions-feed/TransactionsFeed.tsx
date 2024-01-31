@@ -1,11 +1,4 @@
-import { getAllTransactions } from "@/mock-api/routes/transaction/getAllTransaction";
-import TransactionCard from "../transaction-card/TransactionCard";
-import { useState } from "react";
-
 function TransactionsFeed() {
-	// const getTransactions = getAllTransactions();
-	// const [transactions, setTransactions] = useState(getTransactions);
-
 	return (
 		<div className="border-2 border-red-600">
 			<div>
