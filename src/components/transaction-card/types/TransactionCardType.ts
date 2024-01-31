@@ -5,5 +5,5 @@ export type TransactionCardType = {
 	description?: string;
 	transactionDate: Date;
 	category: string;
-	transactionAmount: string;
+	transactionAmount: number;
 };
