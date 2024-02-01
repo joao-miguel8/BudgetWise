@@ -1,4 +1,15 @@
+import { useFormik } from "formik";
+
 function AddTransactionModal({ showAddTransactionModal, setShowAddTransactionModal }: { showAddTransactionModal: boolean; setShowAddTransactionModal: (boolVal: boolean) => void }) {
+	const currentDate = new Date();
+
+	const formik = useFormik({
+		initialValues: { logo: "", companyName: "", transactionDate: currentDate.toDateString(), category: "", transactionAmount: 0 },
+		onSubmit: values => {
+			alert(JSON.stringify(values, null, 2));
+		},
+	});
+
 	return (
 		<>
 			{showAddTransactionModal && (
@@ -16,26 +27,13 @@ function AddTransactionModal({ showAddTransactionModal, setShowAddTransactionMod
 								<button className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none" onClick={() => setShowAddTransactionModal(false)}></button>
 							</div>
 							{/* Modal Form */}
-							<form className="relative px-6 pb-4 flex-auto">
-								{/* Logo */}
-								<div className="flex flex-col w-fit mt-4">
-									<label htmlFor="logo" className="font-semibold text-12">
-										Logo
-									</label>
-									<select name="logo" id="logo" className="mt-2">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-									</select>
-								</div>
-
+							<form onSubmit={formik.handleSubmit} className="relative px-6 pb-4 flex-auto">
 								{/* Company Name */}
 								<div className="mt-4">
 									<label htmlFor="name" className="font-semibold text-12">
 										Company Name
 									</label>
-									<input id="companyName" name="companyName" type="text" className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 rounded" />
+									<input onChange={formik.handleChange} value={formik.values.companyName} id="companyName" name="companyName" type="text" className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 rounded" />
 								</div>
 
 								{/* Category */}
@@ -43,14 +41,14 @@ function AddTransactionModal({ showAddTransactionModal, setShowAddTransactionMod
 									<label htmlFor="name" className="font-semibold text-12">
 										Category
 									</label>
-									<input id="category" name="category" type="text" className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 rounded" />
+									<input onChange={formik.handleChange} value={formik.values.category} id="category" name="category" type="text" className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 rounded" />
 								</div>
 								{/* Transaction Amount */}
 								<div className="mt-4">
 									<label htmlFor="name" className="font-semibold text-12">
 										Transaction Amount
 									</label>
-									<input id="transactionAmount" name="transactionAmount" type="number" className="mt-1 px-2 py-1 w-full text-gray-800  bg-white text-14 border shadow-sm border-gray-300  focus:ring rounded" />
+									<input onChange={formik.handleChange} value={formik.values.transactionAmount} id="transactionAmount" name="transactionAmount" type="number" className="mt-1 px-2 py-1 w-full text-gray-800  bg-white text-14 border shadow-sm border-gray-300  focus:ring rounded" />
 								</div>
 
 								{/* Transaction Date */}
@@ -58,7 +56,7 @@ function AddTransactionModal({ showAddTransactionModal, setShowAddTransactionMod
 									<label htmlFor="transactionDate" className="font-semibold text-12">
 										Transaction Date
 									</label>
-									<input id="transactionDate" name="transactionDate" type="date" className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 focus:ring rounded" />
+									<input onChange={formik.handleChange} value={formik.values.transactionDate} id="transactionDate" name="transactionDate" type="text" disabled className="mt-1 px-2 py-1 w-full text-gray-800 bg-white text-14 border shadow-sm border-gray-300 focus:ring rounded" />
 								</div>
 							</form>
 							{/* Footer Buttons */}
