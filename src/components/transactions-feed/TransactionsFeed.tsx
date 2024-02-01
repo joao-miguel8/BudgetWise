@@ -6,7 +6,7 @@ function TransactionsFeed() {
 	const [transactions, setTransactions] = useState(transactionsData);
 
 	return (
-		<div className="border-2 border-red-600">
+		<div>
 			<div>
 				<span className="my-4 inline-block text-[#515151]">25 March, 2023</span>
 				{/* Transaction card  */}
