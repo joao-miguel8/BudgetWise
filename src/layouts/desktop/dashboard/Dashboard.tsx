@@ -20,7 +20,7 @@ function Dashboard() {
 						{/* Left main container content (transactions) */}
 						<div className="flex flex-1">
 							{/* Transaction feed list container */}
-							<div className="w-9/12">
+							<div className="px-4 w-9/12">
 								<div className="mt-4 flex items-center">
 									<h3 className="text-20">Transactions</h3>
 									<button onClick={() => setShowAddTransactionModal(true)} className="ml-2">
